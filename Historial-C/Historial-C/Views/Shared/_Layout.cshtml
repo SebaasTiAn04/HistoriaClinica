@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Medicuritas </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/MisEstilos.css" asp-append-version="true" />
+
+</head>
+<body>
+    <header>
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3"> *@     
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <!-- <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" title="MediCuritas"></a>-->
+                <a class="Home" asp-area="" asp-controller="Home" asp-action="Index" title="Home"></a>
+                            
+                    
+                        @if (signInManager.IsSignedIn(User)) {
+
+                    @if (User.IsInRole("Medico")){
+
+                     <a class="Pacientes" asp-area="" asp-controller="Pacientes" asp-action="Index" title="Pacientes"><p id="referencia">Pacientes</p></a>
+                   @* <a class="Usuarios" asp-area="" asp-controller="Personas" asp-action="Index" title="Usuarios"><p id="referencia" style="text-decoration:none">Usuarios</p></a>
+                    <a class="Empleados" asp-area="" asp-controller="Empleados" asp-action="Index" title="Empleados"><p id="referencia2">Empleados</p></a>
+                    <a class="Medicos" asp-area="" asp-controller="Medicos" asp-action="Index" title="Medicos"><p id="referencia">Medicos</p></a>
+                    <a class="Especialidades" asp-area="" asp-controller="Especialidades" asp-action="Index" title="Especialidades"><p id="referencia4">Especialidades</p></a>
+                    <a class="Pacientes" asp-area="" asp-controller="Pacientes" asp-action="Index" title="Pacientes"><p id="referencia">Pacientes</p></a>
+                    <a class="Evoluciones" asp-area="" asp-controller="Evoluciones" asp-action="Index" title="Evoluciones"><p id="referencia2">Evoluciones</p></a>
+                    <a class="Episodios" asp-area="" asp-controller="Episodios" asp-action="Index" title="Episodios"><p id="referencia2">Episodios</p></a>
+                    <a class="Epicrisis" asp-area="" asp-controller="Epicrisis" asp-action="Index" title="Epicrisis"><p id="referencia">Epicrisis</p></a>
+                    <a class="Diagnosticos" asp-area="" asp-controller="Diagnosticos" asp-action="Index" title="Diagnosticos"><p id="referencia2">Diagnosticos</p></a>
+                    <a class="Notas" asp-area="" asp-controller="Notas" asp-action="Index" title="Notas"><p id="referencia3">Notas</p></a>
+                    <a class="Nosotros" asp-area="" asp-controller="Home" asp-action="InformacionInstitucional" title="Informacion institucional"><p id="referencia2">Contactanos</p></a>*@
+                    <a class="CerrarSesion" asp-area="" asp-controller="Account" asp-action="CerrarSesion" title="Cerrar sesion"></a>
+
+                    }
+                    else if (User.IsInRole("Empleado")){
+                        <a class="Usuarios" asp-area="" asp-controller="Pacientes" asp-action="Create" title="Crear Paciente"><p id="referencia" style="text-decoration:none">Paciente</p></a>
+                        <a class="Empleados" asp-area="" asp-controller="Empleados" asp-action="Create" title="Crear Empleado"><p id="referencia2">Empleado</p></a>
+                        <a class="Medicos" asp-area="" asp-controller="Medicos" asp-action="Create" title="Crear Medico"><p id="referencia">Médico</p></a>
+                        <a class="Pacientes" asp-area="" asp-controller="Medicos" asp-action="Create" title="Crear Medico"><p id="referencia">Pacientes</p></a>
+                        @*<a class="Pacientes" asp-area="" asp-controller="Pacientes" asp-action="Index" title="Pacientes"><p id="referencia">Pacientes</p></a>
+                        <a class="Evoluciones" asp-area="" asp-controller="Evoluciones" asp-action="Index" title="Evoluciones"><p id="referencia2">Evoluciones</p></a>
+                        <a class="Episodios" asp-area="" asp-controller="Episodios" asp-action="Index" title="Episodios"><p id="referencia2">Episodios</p></a>
+                        <a class="Epicrisis" asp-area="" asp-controller="Epicrisis" asp-action="Index" title="Epicrisis"><p id="referencia">Epicrisis</p></a>
+                        <a class="Diagnosticos" asp-area="" asp-controller="Diagnosticos" asp-action="Index" title="Diagnosticos"><p id="referencia2">Diagnosticos</p></a>
+                        <a class="Notas" asp-area="" asp-controller="Notas" asp-action="Index" title="Notas"><p id="referencia3">Notas</p></a>
+
+                        <a class="Nosotros" asp-area="" asp-controller="Home" asp-action="InformacionInstitucional" title="Informacion institucional"><p id="referencia2">Contactanos</p></a>
+                       *@ <a class="CerrarSesion" asp-area="" asp-controller="Account" asp-action="CerrarSesion" title="Cerrar sesion"></a>
+
+                    } else{
+                        <a class="Perfil-Usuario" asp-area="" asp-controller="Personas" asp-action="DetailsPerfil" asp-route-personaName="@User.Identity.Name" title="Perfil"><p id="referencia" style="text-decoration:none">Perfil</p></a>
+                        <a class="HistorialClinica-Usuario" asp-area="" asp-controller="Pacientes" asp-action="HistorialClinicaPaciente" asp-route-pacienteUserName="@User.Identity.Name" title="Historial Clinica"><p id="referencia2">Historial</p></a>
+                     
+                        @*<a class="Evoluciones" asp-area="" asp-controller="Evoluciones" asp-action="Index" title="Evoluciones"><p id="referencia2">Evoluciones</p></a>
+                        <a class="Episodios" asp-area="" asp-controller="Episodios" asp-action="Index" title="Episodios"><p id="referencia2">Episodios</p></a>
+                        <a class="Epicrisis" asp-area="" asp-controller="Epicrisis" asp-action="Index" title="Epicrisis"><p id="referencia">Epicrisis</p></a>
+                        <a class="Diagnosticos" asp-area="" asp-controller="Diagnosticos" asp-action="Index" title="Diagnosticos"><p id="referencia2">Diagnosticos</p></a>
+                        <a class="Notas" asp-area="" asp-controller="Notas" asp-action="Index" title="Notas"><p id="referencia3">Notas</p></a>
+                <a class="Nosotros" asp-area="" asp-controller="Home" asp-action="InformacionInstitucional" title="Informacion institucional"><p id="referencia2">Contactanos</p></a>*@
+                        <a class="CerrarSesion" asp-area="" asp-controller="Account" asp-action="CerrarSesion" title="Cerrar sesion"></a>
+                    }
+                    
+                        }
+                        else 
+                        {
+
+                    <a class="Registrarse" asp-area="" asp-controller="Account" asp-action="Registrar" title="Registrate"><p id="referencia2">Registrate</p></a>
+                    <a class="IniciarSesion" asp-area="" asp-controller="Account" asp-action="IniciarSesion" title="Iniciar Sesion"><p id="referencia3">Login</p></a>
+                    <a class="Nosotros" asp-area="" asp-controller="Home" asp-action="InformacionInstitucional" title="Informacion institucional"><p id="referencia2">Nosotros</p></a>
+                    <a class="Cartilla" asp-area="" asp-controller="Medicos" asp-action="Index" title="Cartilla Medica"><p id="referencia">Cartilla</p></a>
+                              
+                        }
+                       
+             </div>
+         </nav>
+    </header>
+    @*<img src="~/img/CuritasFondo.jpg" id="fondo" />*@
+    <div class="container">
+        <main role="main" class="col-12">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Medicuritas <a asp-action="Seed" asp-controller="PreCarga"> Pre Carga DB </a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Historial_C.Models.Medico>
+@{
+    ViewData["Title"] = "Cartilla Médica";
+}
+
+<h5 class="card-title">Cartilla Médica</h5>
+
+<h1>Nuestra cartilla Médica</h1>
+
+
+
+@using (Html.BeginForm("Index", "Medicos"))
+{
+    <div class="Buscador">
+        @Html.TextBox("especialidadId", null, new{@class = "buscarEspecialidad"})
+        <input type="submit" value="" class="Buscar" title="Buscar" />
+    </div>
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidad)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Matricula)
+                </td>
+                @* <td>
+            @Html.DisplayFor(modelItem => item.Legajo)
+            </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidad.Nombre)
+                </td>
+
+                
+            </tr>
+        }
+    </tbody>
+</table>
+

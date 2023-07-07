@@ -1,0 +1,105 @@
+﻿@model Historial_C.Models.Episodio
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Episodio</h1>
+
+<div>
+    
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Paciente.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Paciente.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Paciente.Apellido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Paciente.Apellido)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Motivo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Motivo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+       @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EstadoAbierto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EstadoAbierto)
+        </dd>*@
+    </dl>
+</div>
+<div>
+   
+    @if (User.IsInRole("Medico") || User.IsInRole("Empleado"))
+    {
+
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary btn-dark">Edit</a>
+    }
+<h1> Evoluciones</h1>
+  @if (User.IsInRole("Medico"))
+  {
+        <a asp-action="Create" asp-controller="Evoluciones" asp-route-episodioId="@Model.Id"  class="btn btn-primary btn-dark">Cargar Evolucion</a>
+  }
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Evoluciones)
+                </th>
+                <th>
+                    Descripcion Atencion
+                </th>
+                <th>
+                    Estado
+                </th>
+                @*           <th>
+                @Html.DisplayNameFor(model => model.NotaId)
+                </th>
+                <th></th>*@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Evoluciones)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Medico.Apellido)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionAtencion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EstadoAbierto)
+                    </td>
+                    @*           <td>
+                @Html.DisplayFor(modelItem => item.NotaId)
+                </td>*@
+                    <td>
+                        @if (User.IsInRole("Medico") || User.IsInRole("Empleado"))
+                        {
+                            <a asp-controller="Evoluciones" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary btn-dark">Edit</a>
+                        }
+                        <a asp-controller="Evoluciones"  asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-dark">Details</a>
+                       
+                        
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

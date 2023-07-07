@@ -1,0 +1,429 @@
+﻿
+
+.Home {
+    background: url('../img/iconos/hospital(3).png') no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.Registrarse {
+    background: url(../img/iconos/medico.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.IniciarSesion {
+    background: url(../img/iconos/inicio-sesion.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.Nosotros {
+    background: url(../img/iconos/medical-team.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.Cartilla {
+    background: url(../img/iconos/medical-check.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.tituloTiempo{
+    text-align: right;
+    
+}
+
+.tiempo {
+    min-width: 300px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.parrafoTiempo {
+    font-size: 1em;
+    line-height: 1.75em;
+    border-top: 3px solid;
+    -o-border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+    border-image: linear-gradient(to right, #743ad5 0%, #d53a9d 100%);
+    border-image-slice: 1;
+    border-width: 3px;
+    margin: 0;
+    padding: 40px;
+    counter-increment: section;
+    position: relative;
+    color: #34435E;
+}
+
+    .parrafoTiempo:before {
+        content: counter(section);
+        position: absolute;
+        border-radius: 50%;
+        padding: 10px;
+        height: 2.25em;
+        width: 2.25em;
+        background-color: #34435E;
+        text-align: center;
+        line-height: 1.25em;
+        color: #ffffff;
+        font-size: 1em;
+    }
+
+    .parrafoTiempo:nth-child(odd) {
+    border-right: 3px solid;
+    padding-left: 0;
+}
+
+        .parrafoTiempo:nth-child(odd):before {
+            left: 100%;
+            margin-left: -20px;
+        }
+
+    .parrafoTiempo:nth-child(even) {
+        border-left: 3px solid;
+        padding-right: 0;
+    }
+
+        .parrafoTiempo:nth-child(even):before {
+            right: 100%;
+            margin-right: -20px;
+        }
+
+    .parrafoTiempo:first-child {
+        border-top: 0;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .parrafoTiempo:last-child {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+.titulo-card {
+    text-align: center;
+}
+
+.card-infoContacto {
+    width: 350px;
+    margin: 10px;
+    text-align: center;
+}
+.card-img-infoContacto {
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+}
+
+.Usuarios {
+    background: url(../img/iconos/hospital-bed.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Empleados {
+    background: url(../img/iconos/crowd.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Medicos {
+    background: url(../img/iconos/diagnosis.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Especialidades {
+    background: url(../img/iconos/online-appointment.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Pacientes {
+    background: url(../img/iconos/hospital-bed1.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Evoluciones {
+    background: url('../img/iconos/medical-history (1).png') no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Episodios {
+    background: url(../img/iconos/medical-report.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Epicrisis {
+    background: url(../img/iconos/package.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Diagnosticos {
+    background: url(../img/iconos/medical-record.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Notas {
+    background: url(../img/iconos/medical-history3.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Perfil-Usuario {
+    background: url(../img/iconos/id-card.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.HistorialClinica-Usuario {
+    background: url(../img/iconos/medical-record.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.CerrarSesion {
+    background: url(../img/iconos/iniciar-la-sesion.png) no-repeat;
+    background-size: 40px 40px;
+    height: 40px;
+    width: 40px;
+    margin: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;
+    text-decoration: none;
+}
+.Buscar {
+    background: url(../img/iconos/buscar.png) no-repeat 0px 5px;
+    background-size: 40px 40px;
+    height: 50px;
+    width: 40px;
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    float: right;
+    border:0px;
+    /*Se comenta esta parte porque no me gusta el bordecito y que parezca un botón
+    border-radius: 5px;
+    box-shadow: 1px 3px 5px;
+    color: black;*/
+}
+
+#referencia {
+    height: 30px;
+    width: 30px;
+    margin: 45px;
+    margin-left: -12px;
+    margin-right: 10px;
+    color: darkgrey;
+    font-weight: bold;
+}
+
+#referencia2 {
+    height: 30px;
+    width: 30px;
+    margin: 45px;
+    margin-left: -20px;
+    margin-right: 10px;
+    color: darkgrey;
+    font-weight: bold;
+}
+
+#referencia3 {
+    height: 30px;
+    width: 30px;
+    margin: 45px;
+    margin-left: 0px;
+    margin-right: 10px;
+    color: darkgrey;
+    font-weight: bold;
+}
+
+#referencia4 {
+    height: 30px;
+    width: 30px;
+    margin: 45px;
+    margin-left: -25px;
+    margin-right: 10px;
+    color: darkgrey;
+    font-weight: bold;
+}
+/*
+#fondo {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 115px;
+    left: 0;
+    background: linear-gradient(90deg, #52c4df, #ad55c1);
+    opacity: 0.2;
+    z-index:-1;
+}*/
+
+#medicuritas {
+    font-family: 'Mina', sans-serif;
+    font-size: 55px;
+    color: black;
+    margin-left: -140px;
+}
+
+.buscarEspecialidad {
+    background-color: #fff;
+    background-size: 24px;
+    width: 300px;
+    border: transparent;
+    border-bottom: solid 1px #ccc;
+    padding: 10px 10px 10px 30px;
+    outline: none;
+}
+
+.Buscador {
+    width: 350px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+.card-infoContactoHome {
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    background: #f5e1c8;
+    border: 1px black;
+    border-radius: 15px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.texto-Descripcion{
+    margin-bottom:20px;
+}
+
+.card-infoContactoHome:hover {
+    width: 300px;
+    margin: 10px;
+    text-align: center;
+    background: #b0a190;
+    border: 1px black;
+    border-radius: 15px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+.card-Usuario {
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    background: #f5e1c8;
+    border: 1px black;
+    border-radius: 15px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+
+    .card-Usuario:hover {
+        width: 250px;
+        margin: 10px;
+        text-align: center;
+        background: #b0a190;
+        border: 1px black;
+        border-radius: 15px;
+        box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    }

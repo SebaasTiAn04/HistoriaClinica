@@ -1,0 +1,80 @@
+﻿@model Historial_C.Models.Paciente
+
+
+@*
+
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>
+   Historia Clinica
+</h1>
+@if (User.IsInRole("Medico") || User.IsInRole("Empleado"))
+{
+    <a asp-controller="Episodios" asp-action="Create" asp-route-pacienteId="@Model.Id" class=" btn btn-primary btn-dark" title="Crear Episodio">Crear Episodio</a>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Episodios)
+            </th>
+            <th>
+                Fecha y hora
+            </th>
+            <th>
+                Estado
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Episodios) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Motivo)
+            </td>
+           <td>
+                @Html.DisplayFor(modelItem => item.FechaYHoraInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoAbierto)
+            </td>
+            <td>
+                    @if (User.IsInRole("Medico") || User.IsInRole("Empleado"))
+                    {
+                        <a asp-controller="Episodios" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    }
+                   
+                    <a asp-controller="Episodios" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-dark">Details</a>
+            </td>
+<<<<<<< Updated upstream
+=======
+            <td>
+                    
+                        
+                        <a asp-controller="Episodios" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-dark">Details</a>
+
+                    @if ((User.IsInRole("Medico")) && (item.EstadoAbierto == true) && (item.Evoluciones.Count()>0))
+                    {
+
+                        @if(item.Evoluciones.All(e => !e.EstadoAbierto))
+                        {
+                            <a asp-controller="Episodios" asp-action="CierreEpisodio" asp-route-id="@item.Id" class="btn btn-primary btn-dark">Cerrar Episodio</a>
+                        }
+               
+                       
+                    }
+                    @if ((User.IsInRole("Empleado")) && (item.EstadoAbierto == true) && (item.Evoluciones.Count == 0))
+                    {
+                        <a asp-controller="Episodios" asp-action="CierreAdministrativo" asp-route-id="@item.Id" class="btn btn-primary btn-dark">Cierre administrativo</a>
+                    }
+                </td>
+>>>>>>> Stashed changes
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,58 @@
+﻿@model Historial_C.Models.Evolucion
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Evoluciones</h1>
+
+@if(User.IsInRole("Medico")){
+<p>
+    <a asp-action="Create" asp-route-episodioId="@Model.Id" asp-route-medicoId="@Model.MedicoId" class="btn btn-primary">Crear Evolución</a>
+</p>
+}@*
+<table class="table">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Medico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescripcionAtencion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoAbierto)
+            </th>
+           <th>
+                @Html.DisplayNameFor(model => model.NotaId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Medico.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescripcionAtencion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoAbierto)
+            </td>
+           <td>
+                @Html.DisplayFor(modelItem => item.NotaId)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Details</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+    
+    </table>*@
+    

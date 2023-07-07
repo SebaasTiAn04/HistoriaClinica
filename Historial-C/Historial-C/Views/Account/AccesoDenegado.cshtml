@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Acceso Denegado";
+    bool hayReturnUrl = !string.IsNullOrEmpty(ViewBag.ReturnUrl);
+}
+
+<div class = "text-center text-white" style="background-color:black">
+    <h1>Su usuario no tiene los permisos suficientes @if(hayReturnUrl){<span>para acceder a @ViewBag.ReturnUrl</span>}
+    </h1>
+    <a asp-action = "CerrarSesion">Iniciar sesion con otra cuenta</a>
+</div>

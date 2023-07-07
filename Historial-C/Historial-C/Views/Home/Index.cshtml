@@ -1,0 +1,143 @@
+﻿ 
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if(ViewBag.Mensaje != null)
+{
+    <div>
+        <p class="text-info">@ViewBag.Mensaje</p>
+    </div>
+}
+
+
+<div class="text-center">
+    <h1 class="card-title"> Medicuritas Inc. </h1>
+</div>   
+
+@if (signInManager.IsSignedIn(User))
+{
+    @if (User.IsInRole("Empleado"))
+    {
+     <!--Home del empleado logueado-->
+     <div class="card-group d-flex justify-content-center">
+            <a asp-controller="Pacientes" asp-action="Create" title="Crear Paciente">
+           <div class="card-Usuario">
+            <img class="card-img-infoContacto" src="../img/iconos/hospital-bed.png" alt="Card image cap">
+            <h5 class="card-title">Crear Paciente</h5>
+            </div></a>
+
+            <a asp-area="" asp-controller="Empleados" asp-action="Create" title="Crear Empleado">
+            <div class="card-Usuario">
+                <img class="card-img-infoContacto" src="../img/iconos/crowd.png" alt="Card image cap">
+                    <h5 class="card-title">Crear Empleado</h5>
+
+                </div>
+            </a>
+
+            <a asp-area="" asp-controller="Medicos" asp-action="Create" title="Crear Médico">
+            <div class="card-Usuario">
+                
+                <img class="card-img-infoContacto" src="../img/iconos/diagnosis.png" alt="Card image cap">
+                
+                    <h5 class="card-title">Crear Médico</h5>
+
+                </div>
+            </a>
+
+            <a asp-area="" asp-controller="Pacientes" asp-action="Index" title="Pacientes">
+            <div class="card-Usuario">
+                
+                <img class="card-img-infoContacto" src="../img/iconos/hospital-bed1.png" alt="Card image cap">
+                
+                    <h5 class="card-title">Pacientes</h5>
+
+                </div>
+            </a>
+     </div>
+    }
+    else if (User.IsInRole("Usuario")){
+        <!--Home del usuario logueado-->
+        <div class="card-group d-flex justify-content-center">
+            <a asp-controller="Personas" asp-action="DetailsPerfil" asp-route-personaName="@User.Identity.Name" title="Mi Perfil">
+            <div class="card-Usuario">
+                
+                <img class="card-img-infoContacto" src="../img/iconos/id-card.png" alt="Card image cap">
+                
+                    <h5 class="card-title">Mi perfil</h5>
+
+                </div>
+            </a>
+            <a asp-area="" asp-controller="Pacientes" asp-action="HistorialClinicaPaciente" asp-route-pacienteUserName="@User.Identity.Name" title="Historial Clínica">
+            <div class="card-Usuario">
+                <img class="card-img-infoContacto" src="../img/iconos/medical-record.png" alt="Card image cap">
+                
+                    <h5 class="card-title">Historial</h5>
+
+                </div>
+            </a>
+        </div>
+    }
+    else{
+        <!--Home del medico logueado-->
+        <div class="card-group d-flex justify-content-center">
+            <a asp-controller="Pacientes" asp-action="Index" title="Pacientes">
+             <div class="card-Usuario">
+                
+                <img class="card-img-infoContacto" src="../img/iconos/hospital-bed1.png" alt="Card image cap">
+                
+               <h5 class="card-title">Pacientes</h5>
+            </div>
+            </a>
+        </div>
+    }
+}
+else{
+     <!--Home del usuario deslogueado-->
+ <div class="card-group d-flex justify-content-center">
+       
+    <div class="card-infoContactoHome">
+            <a asp-area="" asp-controller="Account" asp-action="Registrar" title="Registrarse">
+            <img class="card-img-infoContacto" src="../img/iconos/medico.png" alt="Card image cap">
+            
+            <h5 class="card-title">Registrarse</h5></a>
+            <div class="texto-Descripcion">
+                <p class="card-text">Sólo los pacientes de la Clínica pueden registrarse en este sistema.</p>
+            </div>
+        </div>
+
+
+    <div class="card-infoContactoHome">
+            <a asp-area="" asp-controller="Account" asp-action="IniciarSesion" title="Iniciar Sesion">
+            <img class="card-img-infoContacto" src="../img/iconos/inicio-sesion.png" alt="Card image cap">
+            
+            <h5 class="card-title">Iniciar Sesión</h5></a>
+            <div class="texto-Descripcion">
+                <p class="card-text">Por favor, inicie sesión para gestionar turnos y/o recetas a través de nuestro sitio web.</p>
+            </div>    
+        </div>
+
+
+    <div class="card-infoContactoHome">
+            <a asp-area="" asp-controller="Home" asp-action="InformacionInstitucional" title="Informacion institucional">
+            <img class="card-img-infoContacto" src="../img/iconos/medical-team.png" alt="Card image cap">
+            
+            <h5 class="card-title">Sobre Nosotros</h5></a>
+            <div class="texto-Descripcion">
+                <p class="card-text">Conoce brevemente nuestra historia.</p>
+            </div>    
+        </div>
+
+    <div class="card-infoContactoHome">
+            <a asp-area="" asp-controller="Medicos" asp-action="Index" title="Cartilla Medica">
+            <img class="card-img-infoContacto" src="../img/iconos/medical-check.png" alt="Card image cap">
+            
+            <h5 class="card-title">Cartilla Médica</h5></a>
+            <div class="texto-Descripcion">
+                <p class="card-text">Descubrí todas las especialidades con la que contamos.</p>
+            </div>
+        </div>
+ </div>
+}
+   
